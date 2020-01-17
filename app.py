@@ -14,7 +14,7 @@ options.add_argument('--headless')
 options.add_argument('--lang=en-us')
 options.add_argument('--log-level=3')
 
-driver = webdriver.Chrome("/home/ubuntu/aws-social/chromedriver", chrome_options=options)
+driver = webdriver.Chrome(chrome_options=options)
 
 
 @app.route('/')
