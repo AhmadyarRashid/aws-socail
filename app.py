@@ -14,10 +14,10 @@ options.add_argument('--headless')
 options.add_argument('--lang=en-us')
 options.add_argument('--log-level=3')
 
-driver = webdriver.Chrome(chrome_options=options)
+driver = webdriver.Chrome('/usr/local/bin/chromedriver',chrome_options=options)
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def basic():
     return 'Server is running ....'
 
@@ -37,4 +37,5 @@ def youtube():
 
 
 if __name__ == '__main__':
+    print("server is running")
     app.run()
