@@ -1,8 +1,11 @@
+
 from flask import Flask, request, jsonify
 from instragram import main
 from youtube import main as youtubeMain
 from flask_cors import CORS
 from selenium import webdriver
+import os
+from pyvirtualdisplay import Display
 
 app = Flask(__name__)
 CORS(app)
@@ -13,8 +16,19 @@ options.add_argument('--incognito')
 options.add_argument('--headless')
 options.add_argument('--lang=en-us')
 options.add_argument('--log-level=3')
+options.add_argument('--disable-extensions')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-gpu')
+options.add_argument('--disable-dev-shm-usage')
 
-#driver = webdriver.Chrome('./chromedriver',chrome_options=options)
+outputdir = "/home/ubuntu/aws-socail/"
+service_log_path = "{}/chromedriver.log".format(outputdir)
+service_args = ['--verbose']
+
+display = Display(visible=0, size=(800, 600))
+display.start()
+
+driver = webdriver.Chrome(chrome_options=options,service_args=service_args,service_log_path=service_log_path)
 
 @app.route('/', methods=['GET'])
 def basic():
