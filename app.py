@@ -30,20 +30,9 @@ display.start()
 
 driver = webdriver.Chrome(chrome_options=options,service_args=service_args,service_log_path=service_log_path)
 
-@app.route('/youtube', methods=['GET'])
+@app.route('/', methods=['GET'])
 def basic():
-    url = request.args.get('url')
-    print('--- url -----', url)
-#     result = youtubeMain(url, driver)
     return 'server is running'
-
-@app.route('/yt', methods=['GET'])
-def youtube():
-    return 'youtube api is working'
-    url = request.args.get('url')
-    print('--- url -----', url)
-    result = youtubeMain(url, driver)
-    return result
 
 @app.route('/instragram', methods=['GET'])
 def instragram():
@@ -51,6 +40,13 @@ def instragram():
     result = main(url, driver)
     return result
 
+@app.route('/youtube', methods=['GET'])
+def youtube():
+    return 'youtube api is working'
+#     url = request.args.get('url')
+#     print('--- url -----', url)
+#     result = youtubeMain(url, driver)
+#     return result
 
 if __name__ == '__main__':
     print("server is running")
