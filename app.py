@@ -34,19 +34,17 @@ driver = webdriver.Chrome(chrome_options=options,service_args=service_args,servi
 def basic():
     return 'Server is running ....'
 
+@app.route('/youtube', methods=['GET'])
+def index():
+    url = request.args.get('url')
+    print('--- url -----', url)
+    result = youtubeMain(url, driver)
+    return result
 
 @app.route('/instragram', methods=['GET'])
 def instragram():
     url = request.args.get('url')
     result = main(url, driver)
-    return result
-
-
-@app.route('/youtube', methods=['GET'])
-def youtube():
-    url = request.args.get('url')
-    print('--- url -----', url)
-    result = youtubeMain(url, driver)
     return result
 
 
