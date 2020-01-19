@@ -34,9 +34,10 @@ driver = webdriver.Chrome(chrome_options=options,service_args=service_args,servi
 def basic():
     return 'server is running'
 
-@app.route('/instragram', methods=['GET'])
+@app.route('/instragram', methods=['POST'])
 def instragram():
-    url = request.args.get('url')
+#     url = request.args.get('url')
+    url = request.get_json().get('url','')
     result = instraMain(url, driver)
     return result
 
