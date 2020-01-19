@@ -22,13 +22,13 @@ def monthDiff(d1, d2):
 def videoDetail(url, driver):
     url = 'https://www.youtube.com' + url
     driver.get(url)
-    # driver.execute_script("window.scrollTo(0, 1000);")
-    # delay = 3  # seconds
-    # try:
-    #     WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.ID, 'IdOfMyElement')))
-    #     print("Page is ready!")
-    # except TimeoutException:
-    #     print("Loading took too much time!")
+    driver.execute_script("window.scrollTo(0, 1000);")
+    delay = 3  # seconds
+    try:
+        WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.ID, 'IdOfMyElement')))
+        print("Page is ready!")
+    except TimeoutException:
+        print("Loading took too much time!")
 
     page_source_inner = driver.page_source
     vpage = BeautifulSoup(page_source_inner, 'html.parser')
@@ -87,12 +87,12 @@ def uploadPage(url, driver):
     print('---- url is ----' , url1)
     driver.get(url1)
     # driver.execute_script("window.scrollTo(0, 2000);")
-    # delay = 3  # seconds
-    # try:
-    #     WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.ID, 'IdOfMyElement')))
-    #     print("Page is ready!")
-    # except TimeoutException:
-    #     print("Loading took too much time!")
+    delay = 2  # seconds
+    try:
+        WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.ID, 'IdOfMyElement')))
+        print("Page is ready!")
+    except TimeoutException:
+        print("Loading took too much time!")
     page_source_inner = driver.page_source
     upage = BeautifulSoup(page_source_inner, 'html.parser')
 
