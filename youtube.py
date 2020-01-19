@@ -127,7 +127,7 @@ def main(url, driver):
 
     avatar = soup.find('img', attrs={'class': 'style-scope yt-img-shadow'})['src']
     data['avatar'] = avatar
-    # upload_url = soup.find('a', attrs={"class": "yt-simple-endpoint style-scope ytd-shelf-renderer"})['href']
+    upload_url = soup.find('a', attrs={"class": "yt-simple-endpoint style-scope ytd-shelf-renderer"})['href']
     print('--------- url ------', upload_url)
     details = uploadPage(url + '/videos' , driver)
 

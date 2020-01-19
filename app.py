@@ -40,9 +40,11 @@ def instragram():
     result = instraMain(url, driver)
     return result
 
-@app.route('/youtube', methods=['GET'])
+@app.route('/youtube', methods=['POST'])
 def youtube():
-    url = request.args.get('url')
+   # url = request.args.get('url')
+    url = request.get_json().get('url','')
+    print('url from arg is ',url)
     result = main(url, driver)
     return result
 
