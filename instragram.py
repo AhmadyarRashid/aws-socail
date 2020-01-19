@@ -61,6 +61,7 @@ def getPostData(url, driver):
 
 
 def main(url, driver):
+    print('enter in instragram file')
     driver.get(url)
     more_buttons = driver.find_elements_by_class_name("moreLink")
     for x in range(len(more_buttons)):
@@ -85,6 +86,7 @@ def main(url, driver):
         data['avatar'] = avatar_1['src']
     else:
         data['avatar'] = 'Some thing went wrong'
+    print('basic data ------', data)    
 
     list_of_post = [main.a for main in soup.find_all('div', attrs={'class': 'v1Nh3 kIKUG _bz0w'})]
 
