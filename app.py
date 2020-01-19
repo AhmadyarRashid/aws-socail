@@ -1,7 +1,7 @@
 
 from flask import Flask, request, jsonify
 from instragram import main
-from youtube import youtubeMain
+from youtube import main as youtubeMain
 from flask_cors import CORS
 from selenium import webdriver
 import os
