@@ -1,7 +1,7 @@
 
 from flask import Flask, request, jsonify
 from instragram import main
-from youtube import main as youtubeMain
+from youtube import youtubeMain
 from flask_cors import CORS
 from selenium import webdriver
 import os
@@ -36,6 +36,7 @@ def basic():
 
 @app.route('/youtube', methods=['GET'])
 def index():
+    return 'youtube api is working'
     url = request.args.get('url')
     print('--- url -----', url)
     result = youtubeMain(url, driver)
