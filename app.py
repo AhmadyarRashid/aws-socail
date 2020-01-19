@@ -1,7 +1,7 @@
 
 from flask import Flask, request, jsonify
-from youtube import main as youtubeMain
-from instragram import main
+from youtube import main 
+from instragram import main as instraMain
 from flask_cors import CORS
 from selenium import webdriver
 import os
@@ -37,13 +37,13 @@ def basic():
 @app.route('/instragram', methods=['GET'])
 def instragram():
     url = request.args.get('url')
-    result = main(url, driver)
+    result = instraMain(url, driver)
     return result
 
 @app.route('/youtube', methods=['GET'])
 def youtube():
     url = request.args.get('url')
-    result = youtubeMain(url, driver)
+    result = main(url, driver)
     return result
 
 if __name__ == '__main__':
