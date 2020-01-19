@@ -156,5 +156,5 @@ display.start()
 driver = webdriver.Chrome(chrome_options=options,service_args=service_args,service_log_path=service_log_path)
 
 
-url = "https://www.youtube.com/channel/UC3DkFux8Iv-aYnTRWzwaiBA"
+url = "https://www.youtube.com/channel/UC_c-RTowPbIlzMkIa_O7s6Q"
 main(url, driver)
