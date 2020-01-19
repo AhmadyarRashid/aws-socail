@@ -108,8 +108,8 @@ def uploadPage(url, driver):
     return list
 
 
-def youtubeMain(url, driver):
-    print('in youtube file enter ---')
+def main(url, driver):
+    print('---enter in youtube file -----')
     driver.get(url)
     page_source = driver.page_source
     soup = BeautifulSoup(page_source, 'html.parser')
