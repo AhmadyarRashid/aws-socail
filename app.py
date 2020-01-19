@@ -30,7 +30,7 @@ display.start()
 
 driver = webdriver.Chrome(chrome_options=options,service_args=service_args,service_log_path=service_log_path)
 
-@app.route('/', methods=['GET'])
+@app.route('/youtube', methods=['GET'])
 def basic():
     return 'Server is running ....'
 
