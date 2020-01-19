@@ -22,7 +22,7 @@ def monthDiff(d1, d2):
 def videoDetail(url, driver):
     url = 'https://www.youtube.com' + url
     driver.get(url)
-    driver.execute_script("window.scrollTo(0, 1000);")
+#     driver.execute_script("window.scrollTo(0, 1000);")
 #     delay = 3  # seconds
 #     try:
 #         WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.ID, 'IdOfMyElement')))
