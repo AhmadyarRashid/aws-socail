@@ -34,8 +34,8 @@ driver = webdriver.Chrome(chrome_options=options,service_args=service_args,servi
 def basic():
     url = request.args.get('url')
     print('--- url -----', url)
-    result = youtubeMain(url, driver)
-    return result
+#     result = youtubeMain(url, driver)
+    return 'server is running'
 
 @app.route('/yt', methods=['GET'])
 def youtube():
