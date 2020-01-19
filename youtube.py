@@ -1,13 +1,13 @@
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
+# from selenium.webdriver.common.by import By
+# from selenium.common.exceptions import TimeoutException
 import time
 from bs4 import BeautifulSoup
 from datetime import date, datetime
-from selenium.webdriver.common.keys import Keys
-from html5lib import html5parser
+# from selenium.webdriver.common.keys import Keys
+# from html5lib import html5parser
 
 list_of_months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
@@ -23,12 +23,12 @@ def videoDetail(url, driver):
     url = 'https://www.youtube.com' + url
     driver.get(url)
     driver.execute_script("window.scrollTo(0, 1000);")
-    delay = 3  # seconds
-    try:
-        WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.ID, 'IdOfMyElement')))
-        print("Page is ready!")
-    except TimeoutException:
-        print("Loading took too much time!")
+#     delay = 3  # seconds
+#     try:
+#         WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.ID, 'IdOfMyElement')))
+#         print("Page is ready!")
+#     except TimeoutException:
+#         print("Loading took too much time!")
 
     page_source_inner = driver.page_source
     vpage = BeautifulSoup(page_source_inner, 'html.parser')
@@ -83,16 +83,16 @@ def videoDetail(url, driver):
 
 def uploadPage(url, driver):
     url1 = url + '?view=0&sort=dd&flow=grid'
-    # url2 = 'https://www.youtube.com' + url1
+    url2 = 'https://www.youtube.com' + url1
     print('---- url is ----' , url1)
     driver.get(url1)
     # driver.execute_script("window.scrollTo(0, 2000);")
-    delay = 2  # seconds
-    try:
-        WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.ID, 'IdOfMyElement')))
-        print("Page is ready!")
-    except TimeoutException:
-        print("Loading took too much time!")
+#     delay = 2  # seconds
+#     try:
+#         WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.ID, 'IdOfMyElement')))
+#         print("Page is ready!")
+#     except TimeoutException:
+#         print("Loading took too much time!")
     page_source_inner = driver.page_source
     upage = BeautifulSoup(page_source_inner, 'html.parser')
 
