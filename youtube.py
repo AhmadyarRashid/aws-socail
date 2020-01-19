@@ -6,6 +6,8 @@ from selenium import webdriver
 import time
 from bs4 import BeautifulSoup
 from datetime import date, datetime
+import os
+from pyvirtualdisplay import Display
 # from selenium.webdriver.common.keys import Keys
 # from html5lib import html5parser
 
@@ -131,19 +133,24 @@ def main(url, driver):
 
     data['post_list'] = details
     print('---- data ----', data)
-    # driver.quit()
+    driver.quit()
     return data
 
 
-#
-# options = webdriver.ChromeOptions()
-# options.add_argument('--ignore-certificate-errors')
-# options.add_argument('--incognito')
-# options.add_argument('--headless')
-# options.add_argument('--lang=en-us')
-# options.add_argument('--log-level=3')
-#
-# driver = webdriver.Chrome("./chromedriver", chrome_options=options)
-#
-# url = "https://www.youtube.com/channel/UC3DkFux8Iv-aYnTRWzwaiBA"
-# main(url, driver)
+
+options = webdriver.ChromeOptions()
+options.add_argument('--ignore-certificate-errors')
+options.add_argument('--incognito')
+options.add_argument('--headless')
+options.add_argument('--lang=en-us')
+options.add_argument('--log-level=3')
+options.add_argument('--no-sandbox')
+
+display = Display(visible=0, size=(800, 600))
+display.start()
+
+driver = webdriver.Chrome(chrome_options=options,service_args=service_args,service_log_path=service_log_path)
+
+
+url = "https://www.youtube.com/channel/UC3DkFux8Iv-aYnTRWzwaiBA"
+main(url, driver)
