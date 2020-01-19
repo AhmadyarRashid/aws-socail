@@ -45,6 +45,7 @@ def instragram():
 @app.route('/youtube', methods=['GET'])
 def youtube():
     url = request.args.get('url')
+    print('--- url -----', url)
     result = youtubeMain(url, driver)
     return result
 
