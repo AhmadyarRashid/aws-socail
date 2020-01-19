@@ -43,11 +43,8 @@ def instragram():
 @app.route('/youtube', methods=['GET'])
 def youtube():
     url = request.args.get('url')
-    result = main(url, driver)
+    result = youtubeMain(url, driver)
     return result
-#     print('--- url -----', url)
-#     result = youtubeMain(url, driver)
-#     return result
 
 if __name__ == '__main__':
     print("server is running")
