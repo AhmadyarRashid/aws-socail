@@ -128,33 +128,33 @@ def main(url, driver):
     avatar = soup.find('img', attrs={'class': 'style-scope yt-img-shadow'})['src']
     data['avatar'] = avatar
     # upload_url = soup.find('a', attrs={"class": "yt-simple-endpoint style-scope ytd-shelf-renderer"})['href']
-    # print('--------- url ------', upload_url)
+    print('--------- url ------', upload_url)
     details = uploadPage(url + '/videos' , driver)
 
     data['post_list'] = details
+#     driver.quit()
     print('---- data ----', data)
-    driver.quit()
     return data
 
 
 
-options = webdriver.ChromeOptions()
-options.add_argument('--ignore-certificate-errors')
-options.add_argument('--incognito')
-options.add_argument('--headless')
-options.add_argument('--lang=en-us')
-options.add_argument('--log-level=3')
-options.add_argument('--no-sandbox')
+# options = webdriver.ChromeOptions()
+# options.add_argument('--ignore-certificate-errors')
+# options.add_argument('--incognito')
+# options.add_argument('--headless')
+# options.add_argument('--lang=en-us')
+# options.add_argument('--log-level=3')
+# options.add_argument('--no-sandbox')
 
-outputdir = "/home/ubuntu/aws-socail/"
-service_log_path = "{}/chromedriver.log".format(outputdir)
-service_args = ['--verbose']
+# outputdir = "/home/ubuntu/aws-socail/"
+# service_log_path = "{}/chromedriver.log".format(outputdir)
+# service_args = ['--verbose']
 
-display = Display(visible=0, size=(800, 600))
-display.start()
+# display = Display(visible=0, size=(800, 600))
+# display.start()
 
-driver = webdriver.Chrome(chrome_options=options,service_args=service_args,service_log_path=service_log_path)
+# driver = webdriver.Chrome(chrome_options=options,service_args=service_args,service_log_path=service_log_path)
 
 
-url = "https://www.youtube.com/channel/UC_c-RTowPbIlzMkIa_O7s6Q"
-main(url, driver)
+# url = "https://www.youtube.com/channel/UC_c-RTowPbIlzMkIa_O7s6Q"
+# main(url, driver)
